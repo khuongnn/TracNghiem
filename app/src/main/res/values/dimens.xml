@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Text size-->
+    <dimen name="text_size_8">8sp</dimen>
+    <dimen name="text_size_10">10sp</dimen>
+    <dimen name="text_size_12">12sp</dimen>
+    <dimen name="text_size_13">13sp</dimen>
+    <dimen name="text_size_14">14sp</dimen>
+    <dimen name="text_size_15">15sp</dimen>
+    <dimen name="text_size_16">16sp</dimen>
+    <dimen name="text_size_18">18sp</dimen>
+    <dimen name="text_size_20">20sp</dimen>
+
+    <!--Dp value-->
+    <dimen name="_1dp">1dp</dimen>
+    <dimen name="_2dp">2dp</dimen>
+    <dimen name="_3dp">3dp</dimen>
+    <dimen name="_4dp">4dp</dimen>
+    <dimen name="_5dp">5dp</dimen>
+    <dimen name="_8dp">8dp</dimen>
+    <dimen name="_10dp">10dp</dimen>
+    <dimen name="_12dp">12dp</dimen>
+    <dimen name="_16dp">16dp</dimen>
+    <dimen name="_20dp">20dp</dimen>
+    <dimen name="_24dp">24dp</dimen>
+    <dimen name="_30dp">30dp</dimen>
+    <dimen name="_36dp">36dp</dimen>
+    <dimen name="_40dp">40dp</dimen>
+    <dimen name="_48dp">48dp</dimen>
+    <dimen name="_60dp">60dp</dimen>
+    <dimen name="_80dp">80dp</dimen>
+    <dimen name="_100dp">100dp</dimen>
+    <dimen name="_140dp">140dp</dimen>
+    <dimen name="_180dp">180dp</dimen>
+    <dimen name="_200dp">200dp</dimen>
+
+
+    <!--  Margin size -->
+    <dimen name="margin_small">@dimen/_4dp</dimen>
+    <dimen name="margin_medium">@dimen/_8dp</dimen>
+    <dimen name="margin_big">@dimen/_12dp</dimen>
+    <dimen name="margin_bigger">@dimen/_16dp</dimen>
+    <dimen name="margin_biggest">@dimen/_20dp</dimen>
+
+    <!--  Padding size -->
+    <dimen name="padding_small">@dimen/_4dp</dimen>
+    <dimen name="padding_medium">@dimen/_8dp</dimen>
+    <dimen name="padding_big">@dimen/_12dp</dimen>
+    <dimen name="padding_bigger">@dimen/_16dp</dimen>
+    <dimen name="padding_biggest">@dimen/_20dp</dimen>
+
+    <!--View size-->
+    <dimen name="bottom_navigation_height">56dp</dimen>
+    <dimen name="toolbar_height">56dp</dimen>
+    <dimen name="input_text_height">60dp</dimen>
+    <dimen name="button_height">60dp</dimen>
+    <dimen name="imgHondaHeight">@dimen/_20dp</dimen>
+    <dimen name="iconBackSize">@dimen/_36dp</dimen>
+    <dimen name="spotDetailIconSize">@dimen/_30dp</dimen>
+    <dimen name="imgSpotMovie">100dp</dimen>
+    <dimen name="videoCurated">300dp</dimen>
+    <dimen name="tabDividerHeight">1px</dimen>
+
+    <dimen name="icon_size_small">24dp</dimen>
+    <dimen name="icon_size_medium">36dp</dimen>
+    <dimen name="icon_size_big">40dp</dimen>
+    <dimen name="icon_size_bigger">48dp</dimen>
+
+    <dimen name="_35dp">35dp</dimen>
+    <dimen name="icon_size_biggest">64dp</dimen>
+    <dimen name="_28dp">28dp</dimen>
+    <dimen name="_6dp">6dp</dimen>
+    <dimen name="_45dp">45dp</dimen>
+</resources>

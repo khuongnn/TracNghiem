@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "559465433720",
+    "firebase_url": "https://tracnghiem-42aac.firebaseio.com",
+    "project_id": "tracnghiem-42aac",
+    "storage_bucket": "tracnghiem-42aac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:559465433720:android:3ec5ce3be5846f8607bb8d",
+        "android_client_info": {
+          "package_name": "com.example.tracnghiem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "559465433720-829f2r62k593sugbvvd4401b72aite98.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tracnghiem",
+            "certificate_hash": "09ee31a6386900fadaf0c4f458c7e16342cde3df"
+          }
+        },
+        {
+          "client_id": "559465433720-75up3524j7pigecmsispqmic5f5ums1h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOznhY8keO7JxgSxm6pw7ttdFhHfey6eM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "559465433720-75up3524j7pigecmsispqmic5f5ums1h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

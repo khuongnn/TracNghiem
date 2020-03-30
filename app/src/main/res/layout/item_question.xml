@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.tracnghiem.activity.main.course.CourseViewModel" />
+
+        <variable
+            name="position"
+            type="Integer" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_practice"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/tvNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/textColorDark"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Câu 1: " />
+
+        <TextView
+            android:id="@+id/tvQuestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/textColorDark"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvNumber"
+            tools:text="That looks correct. In fact, I don't think you need to call invalidate(). When you say the button disappears, do you mean that literally or do you mean the button had text or an image on it that disappears?" />
+
+        <RadioGroup
+            android:id="@+id/radGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvQuestion">
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/radA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12dp"
+                android:background="@color/colorWhile"
+                android:buttonTint="@color/colorRadio"
+                android:checked="false"
+                android:textColor="@color/textColorRatioButton"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="Trả lời 1" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/radB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12dp"
+                android:background="@color/colorWhile"
+                android:buttonTint="@color/colorRadio"
+                android:checked="false"
+                android:textColor="@color/textColorRatioButton"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="Trả lời 2" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/radC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="@dimen/_12dp"
+                android:background="@color/colorWhile"
+                android:buttonTint="@color/colorRadio"
+                android:checked="false"
+                android:textColor="@color/textColorRatioButton"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="Trả lời 3" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/radD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12dp"
+                android:background="@color/colorWhile"
+                android:buttonTint="@color/colorRadio"
+                android:checked="false"
+                android:textColor="@color/textColorRatioButton"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="Trả lời 4" />
+        </RadioGroup>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.tracnghiem.activity.main.HomeViewModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/mainContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/tnBottomNavigation" />
+
+        <com.example.tracnghiem.utils.view.TNBottomNavigation
+            android:id="@+id/tnBottomNavigation"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/bottom_navigation_height"
+            android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+</layout>

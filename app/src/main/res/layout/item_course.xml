@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.tracnghiem.activity.main.course.CourseViewModel" />
+
+        <variable
+            name="position"
+            type="Integer" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_6dp"
+        android:background="@color/colorWhile"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        android:orientation="vertical"
+        app:onInterruptClick="@{() -> viewModel.onMosClick(position)}">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvCourse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="@dimen/_2dp"
+                android:ellipsize="end"
+                android:lines="1"
+                android:text='@{viewModel.getMosDetailAt(position).nameMos ?? ""}'
+                android:textColor="@color/textQuizColor"
+                android:textSize="@dimen/text_size_20"
+                android:textStyle="bold"
+                tools:text="Ôn tập thi IC3 2020 " />
+
+            <View
+                android:id="@+id/viewCenter2"
+                android:layout_width="120dp"
+                android:layout_height="1dp"
+                android:layout_below="@+id/tvCourse"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_2dp"
+                android:background="@color/colorAccent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:ellipsize="end"
+                android:gravity="end"
+                android:lines="1"
+                android:maxWidth="@dimen/_180dp"
+                android:scrollHorizontally="true"
+                android:text="@{String.valueOf(viewModel.getMosDetailAt(position).position )}"
+                android:textColor="@color/hashTagColor"
+                android:visibility="gone"
+                tools:text="position" />
+        </RelativeLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2dp">
+
+            <ImageView
+                android:id="@+id/ivCourse"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="@dimen/_4dp"
+                android:padding="@dimen/_6dp"
+                android:scaleType="centerCrop"
+                android:src="@{viewModel.getMosDetailAt(position).imageUrl}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:onInterruptClick="@{() -> viewModel.onMosClick(position)}"
+                tools:src="@drawable/outlook" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="240dp"
+                android:layout_height="55dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_12dp"
+                android:layout_marginTop="4dp"
+                android:text='@{viewModel.getMosDetailAt(position).detail ?? ""}'
+                android:textColor="@color/textQuizColor"
+                android:textSize="13sp"
+                android:textStyle="italic"
+                app:layout_constraintStart_toEndOf="@+id/ivCourse"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text=" Tài Liệu Ôn Tập OutLook mới nhất 2020 Tài Liệu Ôn Tập OutLook mới nhất 2020  Tài Liệu Ôn Tập OutLook mới nhất 2020  " />
+
+            <TextView
+                android:id="@+id/tvCreateName"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/_12dp"
+                android:layout_marginBottom="0dp"
+                android:maxLines="1"
+                android:text='@{viewModel.getMosDetailAt(position).creator ?? ""}'
+                tools:text="NBT: Nguyễn Duy Hiếu - 2020"
+                android:textColor="@color/ratingStartColor"
+                android:textSize="@dimen/text_size_12"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/viewCenter"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_2dp"
+            android:background="@color/colorAccent" />
+
+
+    </LinearLayout>
+
+</layout>

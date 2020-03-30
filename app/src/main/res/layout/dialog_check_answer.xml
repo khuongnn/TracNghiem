@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:padding="@dimen/_12dp">
+
+    <GridView
+        android:id="@+id/llGirdView"
+        android:layout_width="match_parent"
+        tools:listitem="@layout/item_check_answer"
+        android:layout_height="400dp"
+        android:numColumns="3" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20dp"
+        android:weightSum="5"
+        android:padding="@dimen/_12dp"
+        android:background="@color/colorWhile"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorWhile"
+            android:layout_height="match_parent"
+            android:background="@drawable/dialog_button"
+            android:text="Cancel" />
+
+
+        <Button
+            android:id="@+id/btnGon"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@color/colorWhile" />
+        <Button
+            android:id="@+id/btnFinish"
+            android:layout_weight="2"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_width="0dp"
+            android:textColor="@color/colorWhile"
+            android:layout_height="match_parent"
+            android:background="@drawable/dialog_button"
+            android:text="Finish" />
+
+    </LinearLayout>
+
+</LinearLayout>

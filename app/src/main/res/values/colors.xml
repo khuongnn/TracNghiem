@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorWhile">#FFFFFF</color>
+
+    <color name="colorPrimary">#AEE5EC</color>
+
+    <color name="colorPrimaryTransparent">#CCF44336</color>
+
+    <color name="colorPrimaryDark">#98E5EF</color>
+
+    <color name="colorAccent">#AEE5EC</color>
+
+
+
+    <color name="textColorWhite">#FFFFFF</color>
+
+    <color name="textColorLight">#979797</color>
+    <color name="colorRadio">#e75748</color>
+
+    <color name="textColorDark">#DE000000</color>
+
+    <color name="textColorRatioButton">#1502c7</color>
+    <color name="hashTagColor">#673AB7</color>
+
+    <color name="pinSpotColor">#673AB7</color>
+
+    <color name="colorPrimaryAlpha">#CCF44336</color>
+
+    <color name="toolBarColor">#F44336</color>
+    <color name="textQuizColor">#19D2EA</color>
+
+    <color name="bg_menu_white_pressed">#4D000000</color>
+
+    <color name="bgShadowLayer1">#4DCCCCCC</color>
+    <color name="bgShadowLayer2">#40CCCCCC</color>
+    <color name="bgShadowLayer3">#33CCCCCC</color>
+    <color name="bgShadowLayer4">#24CCCCCC</color>
+    <color name="bgShadowLayer5">#1FCCCCCC</color>
+
+    <!--  Login Color  -->
+    <color name="loginHintColor">#EF5350</color>
+    <color name="loginTextColor">#FFFFFF</color>
+    <color name="edtEmailBackground">#9C9C9C</color>
+    <color name="edtPasswordBackground">#D32F2F</color>
+    <color name="loginError">#FF1000</color>
+    <color name="colorRed">#FF0000</color>
+    <color name="loginButtonColor">#FFC6C2</color>
+    <color name="loginErrorTextColor">#99000000</color>
+
+    <!--  Spot detail  -->
+    <color name="iconNavigationColor">#828282</color>
+    <color name="iconBookmarkColor">#828282</color>
+    <color name="navigationTextColor">#99000000</color>
+    <color name="bookmarkTextColor">#99000000</color>
+    <color name="ratingStartColor">#FABA04</color>
+    <color name="totalRatingColor">#000000</color>
+    <color name="spotNameColor">#000000</color>
+    <color name="tagTextColor">#99000000</color>
+    <color name="addressTextColor">#99000000</color>
+    <color name="distanceTextColor">#99000000</color>
+    <color name="spotDetailTitleColor">#FFFFFF</color>
+    <color name="emptyTextColor">#F44336</color>
+
+    <color name="tabSelectedTextColor">#F44336</color>
+    <color name="tabUnSelectedTextColor">#99000000</color>
+
+    <color name="tabDividerSelected">#F44336</color>
+    <color name="tabDividerUnselected">#828282</color>
+
+    <!--  Item Review  -->
+    <color name="reviewerNameTextColor">#DE000000</color>
+    <color name="reviewTimeTextColor">#99000000</color>
+    <color name="reviewTextColor">#000000</color>
+
+    <!-- Item Movie -->
+    <color name="itemMovieSpotNameColor">#DE000000</color>
+    <color name="itemMovieUserNameColor">#DE000000</color>
+    <color name="itemMovieUploadTimeColor">#99000000</color>
+    <color name="itemMovieTagColor">#673AB7</color>
+    <color name="itemMovieFixedTextColor">#99000000</color>
+
+    <!--  BookmarkColor  -->
+    <color name="bookmarkToolbarColor">@color/colorPrimary</color>
+    <color name="bookmarkToolbarTitleColor">@color/textColorWhite</color>
+    <color name="bookmarkTabIndicatorSelectedColor">@color/colorPrimary</color>
+    <color name="bookmarkTabIndicatorUnselectedColor">#99000000</color>
+
+    <color name="bookmarkTabSelectedColor">#8DE7F3</color>
+    <color name="bookmarkTabUnselectedColor">#99000000</color>
+
+    <color name="tabDividerColor">#DADADA</color>
+
+    <!--  MyPostColor  -->
+    <color name="myPostToolbarColor">#E8F6F8</color>
+    <color name="myPostToolbarTitleColor">@color/textColorWhite</color>
+    <color name="myPostTabIndicatorSelectedColor">@color/colorPrimary</color>
+    <color name="myPostTabIndicatorUnselectedColor">#99000000</color>
+
+    <color name="myPostTabSelectedColor">@color/colorPrimary</color>
+    <color name="myPostTabUnselectedColor">#99000000</color>
+    <color name="background_view_count">#66000000</color>
+    <color name="background_login">#AEE5EC</color>
+    <color name="background_practice">#0F000000</color>
+    <color name="background_tab_layout">#FCFFFF</color>
+
+</resources>

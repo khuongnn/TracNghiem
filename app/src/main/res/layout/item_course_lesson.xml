@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.tracnghiem.activity.main.course.lesson.CourseLessonViewModel" />
+
+        <variable
+            name="position"
+            type="Integer" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_4dp"
+        android:clickable="true"
+        android:foreground="?attr/selectableItemBackground"
+        app:onInterruptClick="@{() -> viewModel.onLessonClick(position)}"
+        android:orientation="vertical"
+        android:focusable="true">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/_2dp"
+            android:layout_height="wrap_content"
+            android:background="@color/textColorWhite">
+
+            <ImageView
+                android:id="@+id/ivCourse"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:padding="@dimen/_6dp"
+                android:layout_marginStart="@dimen/_4dp"
+                android:src="@{viewModel.getLessonAt(position).imageUrl}"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/outlook" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="240dp"
+                android:layout_height="55dp"
+                android:text='@{viewModel.getLessonAt(position).nameLesson ?? ""}'
+                android:layout_marginTop="4dp"
+                android:layout_centerVertical="true"
+                android:textColor="@color/textQuizColor"
+                android:ellipsize="end"
+                android:textSize="@dimen/text_size_16"
+                android:textStyle="bold"
+                android:maxLines="3"
+                tools:text="Tài Liệu thi  OutLook mới nhất 2020  "
+                android:layout_marginStart="@dimen/_12dp"
+                app:layout_constraintStart_toEndOf="@+id/ivCourse"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvCreateName"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/_12dp"
+                android:maxLines="1"
+                android:layout_marginBottom="4dp"
+                android:text='@{viewModel.getLessonAt(position).creator ?? ""}'
+                tools:text="NBT: Nguyễn Duy Hiếu - 2020"
+                android:textColor="@color/ratingStartColor"
+                android:textSize="@dimen/text_size_12"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <View
+                android:layout_marginTop="@dimen/_2dp"
+                android:id="@+id/viewCenter2"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_below="@+id/tvCourse"
+                android:layout_centerHorizontal="true"
+                android:background="@color/colorAccent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="?attr/selectableItemBackground"
+                android:ellipsize="end"
+                android:gravity="end"
+                android:visibility="gone"
+                android:lines="1"
+                android:maxWidth="@dimen/_180dp"
+                android:scrollHorizontally="true"
+                android:textColor="@color/hashTagColor"
+                tools:text="position" />
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

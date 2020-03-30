@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/llContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:paddingTop="@dimen/padding_medium"
+            android:paddingBottom="@dimen/padding_medium">
+
+            <ImageView
+                android:id="@+id/imgBack"
+                android:layout_width="@dimen/iconBackSize"
+                android:layout_height="@dimen/iconBackSize"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_back_white" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMosName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_45dp"
+                android:layout_toEndOf="@id/imgBack"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textStyle="bold"
+                android:text="Title"
+                android:textColor="@color/spotDetailTitleColor"
+                android:textSize="@dimen/text_size_20" />
+        </RelativeLayout>
+
+        <com.example.tracnghiem.utils.view.NoneSwipeViewPager
+            android:id="@+id/vpMosDetail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabMosDetail"
+                android:layout_width="match_parent"
+                android:background="@color/background_tab_layout"
+                android:layout_height="wrap_content"
+                app:tabBackground="@drawable/bg_tab_indicator"
+                app:tabIndicator="@android:color/transparent"
+                app:tabIndicatorGravity="bottom"
+                app:tabSelectedTextColor="@color/bookmarkTabSelectedColor"
+                app:tabTextColor="@color/textColorLight" />
+
+        </com.example.tracnghiem.utils.view.NoneSwipeViewPager>
+    </LinearLayout>
+</layout>

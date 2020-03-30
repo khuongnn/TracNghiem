@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.tracnghiem.activity.main.detail.DetailViewModel" />
+    </data>
+
+
+    <RelativeLayout
+        android:id="@+id/rlPractice"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:paddingTop="@dimen/padding_medium"
+            android:paddingBottom="@dimen/padding_medium">
+
+            <ImageView
+                android:id="@+id/imgBack"
+                android:layout_width="@dimen/iconBackSize"
+                android:layout_height="@dimen/iconBackSize"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_back_white" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_45dp"
+                android:layout_toEndOf="@id/imgBack"
+                android:ellipsize="end"
+                android:singleLine="true"
+                tool:text="Fragment Detail"
+                android:textColor="@color/spotDetailTitleColor"
+                android:textSize="@dimen/text_size_20" />
+        </RelativeLayout>
+
+
+        <WebView
+            android:id="@+id/webText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/toolbar" />
+
+    </RelativeLayout>
+</layout>
