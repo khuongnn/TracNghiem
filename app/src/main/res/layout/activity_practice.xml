@@ -120,7 +120,7 @@
                 android:lineSpacingMultiplier="1.2"
                 android:maxLines="1"
                 android:padding="16dp"
-                android:text="Detail"
+                android:text="@string/detail"
                 android:textColor="@color/colorWhile"
                 android:textSize="@dimen/text_size_20"
                 android:textStyle="bold" />

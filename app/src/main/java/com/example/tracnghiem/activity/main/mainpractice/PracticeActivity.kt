@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.View
 import android.view.Window
+import android.widget.AdapterView.OnItemClickListener
 import android.widget.Button
 import android.widget.GridView
 import androidx.lifecycle.Observer
@@ -39,30 +40,7 @@ class PracticeActivity : BaseActivity<ActivityPracticeBinding>() {
 
     // example
     private var itemList =  ArrayList<Questions> ()
-//        get() = arrayListOf(
-//            "Item 1",
-//            "Item 2",
-//            "Item 3",
-//            "Item 4",
-//            "Item 5",
-//            "Item 6",
-//            "Item 7",
-//            "Item 8",
-//            "Item 9",
-//            "Item 10",
-//            "Item 11",
-//            "Item 12",
-//            "Item 13",
-//            "Item 14",
-//            "Item 15",
-//            "Item 16",
-//            "Item 17",
-//            "Item 18",
-//            "Item 19",
-//            "Item 20",
-//            "Item 21",
-//            "Item 22"
-//        )
+
 
 
     override fun initData() {
@@ -100,6 +78,8 @@ class PracticeActivity : BaseActivity<ActivityPracticeBinding>() {
 
                 mPageAdapter.notifyDataSetChanged()
                 viewpager.adapter = mPageAdapter
+
+
             }
         })
 
@@ -142,9 +122,15 @@ class PracticeActivity : BaseActivity<ActivityPracticeBinding>() {
         dialog.setCancelable(false)
         dialog.setContentView(R.layout.dialog_check_answer)
 
-        val gridview = dialog.findViewById<GridView>(R.id.llGirdView)
+        val gridView = dialog.findViewById<GridView>(R.id.llGirdView)
         val adapter = CheckAnswerAdapter(this, R.layout.item_check_answer, itemList)
-        gridview.adapter = adapter
+        gridView.adapter = adapter
+
+        gridView.onItemClickListener = OnItemClickListener { _, _, position, _ ->
+            viewpager.currentItem = position
+            dialog.dismiss()
+        }
+
 
         val yesBtn = dialog.findViewById(R.id.btnFinish) as Button
         val noBtn = dialog.findViewById(R.id.btnCancel) as Button

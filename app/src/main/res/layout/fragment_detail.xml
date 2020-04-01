@@ -34,15 +34,17 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvTitle"
                 android:layout_width="wrap_content"
-                android:layout_height="?attr/actionBarSize"
+                android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="@dimen/_45dp"
                 android:layout_toEndOf="@id/imgBack"
                 android:ellipsize="end"
                 android:singleLine="true"
+                android:textStyle="bold"
                 tool:text="Fragment Detail"
                 android:textColor="@color/spotDetailTitleColor"
                 android:textSize="@dimen/text_size_20" />
+
         </RelativeLayout>
 
 

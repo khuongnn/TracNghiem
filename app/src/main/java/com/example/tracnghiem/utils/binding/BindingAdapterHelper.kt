@@ -39,4 +39,15 @@ object BindingAdapterHelper {
             }
         }
     }
+
+    // set time count down
+    @JvmStatic
+    @BindingAdapter("spotMovieSize")
+    fun TextView.setMovieSize(size: Int) {
+        if (size == 0) visibility = View.GONE
+        else {
+            visibility = View.VISIBLE
+            text = ""
+        }
+    }
 }

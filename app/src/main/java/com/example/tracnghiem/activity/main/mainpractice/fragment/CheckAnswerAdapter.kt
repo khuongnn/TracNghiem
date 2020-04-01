@@ -14,8 +14,7 @@ internal class CheckAnswerAdapter internal constructor(
     context: Context,
     private val resource: Int,
     private val itemList: ArrayList<Questions>?
-) :
-    ArrayAdapter<CheckAnswerAdapter.ItemHolder>(context, resource) {
+) : ArrayAdapter<CheckAnswerAdapter.ItemHolder>(context, resource) {
 
     override fun getCount(): Int {
         return if (this.itemList != null) this.itemList.size else 0
@@ -37,7 +36,7 @@ internal class CheckAnswerAdapter internal constructor(
 
         holder.name!!.text =  "Câu "+ this.itemList!![position].position+":"
 
-        holder.ans!!.text = "A"
+        holder.ans!!.text = this.itemList!![position].setChoiceAns
 
         return convertView
     }

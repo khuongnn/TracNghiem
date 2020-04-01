@@ -8,5 +8,7 @@ data class Questions(
     var d: String?="",
     var correct_answer: String?="",
     var position: Int = 0,
-    var question: String?= ""
+    var question: String?= "",
+    var choseId: Int?= -1,
+    var setChoiceAns: String?= ""
 )
