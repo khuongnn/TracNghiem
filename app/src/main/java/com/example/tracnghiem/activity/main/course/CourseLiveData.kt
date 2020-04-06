@@ -2,10 +2,12 @@ package com.example.tracnghiem.activity.main.course
 
 import androidx.lifecycle.MutableLiveData
 import com.example.tracnghiem.data.model.Mos
+import com.example.tracnghiem.event.ShowNetworkErrorDialogEvent
 import com.example.tracnghiem.network.NetworkManager
 import com.example.tracnghiem.utils.FirestoreKey
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
+import org.greenrobot.eventbus.EventBus
 import org.koin.core.KoinComponent
 import org.koin.core.inject
 import timber.log.Timber
@@ -19,6 +21,7 @@ class CourseLiveData : KoinComponent {
 
     fun fetchList() {
         if (!networkManager.isNetworkConnected()){
+            EventBus.getDefault().post(ShowNetworkErrorDialogEvent())
             mListMosDetail.value = null
             return
         }

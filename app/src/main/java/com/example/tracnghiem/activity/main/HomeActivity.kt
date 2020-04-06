@@ -9,8 +9,12 @@ import com.example.tracnghiem.activity.main.mypage.MyPageFragment
 import com.example.tracnghiem.activity.main.practice.PracticeFragment
 import com.example.tracnghiem.base.BaseActivity
 import com.example.tracnghiem.databinding.ActivityHomeBinding
+import com.example.tracnghiem.event.ShowNetworkErrorDialogEvent
+import com.example.tracnghiem.utils.dialog.DialogNetworkError
 import com.example.tracnghiem.utils.view.TNBottomNavigation
 import kotlinx.android.synthetic.main.activity_home.*
+import org.greenrobot.eventbus.Subscribe
+import org.greenrobot.eventbus.ThreadMode
 
 
 class HomeActivity : BaseActivity<ActivityHomeBinding>() {
@@ -124,4 +128,12 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
         }
     }
 
+    private var mDialogNetworkError : DialogNetworkError? = null
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    fun onMessageEvent(event: ShowNetworkErrorDialogEvent) {
+        if (mDialogNetworkError?.isShowing() != true){
+            mDialogNetworkError = DialogNetworkError(this)
+            mDialogNetworkError?.show()
+        }
+    }
 }

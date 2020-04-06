@@ -21,7 +21,7 @@ class QuizApplication : Application(){
         // Example Tw Auther
         val config = TwitterConfig.Builder(this)
             .logger(DefaultLogger(Log.DEBUG))
-            .twitterAuthConfig(TwitterAuthConfig("r5nPFPbcDrzoJM9bIBCqyfHPK", "oJ8y2KPIySPpoBX3eCcqgcnmPGXLI94BR4g9ZztnApSmXQG9Ij "))
+            .twitterAuthConfig(TwitterAuthConfig("vZVUNtzpIBLGA6d1ACa9tMW7f", "nd8lJ0jgMNhOxfch6DXKT2TJjYzWPiCkAsOeoxKE7Wi4U1G39X "))
             .debug(true)
             .build()
         Twitter.initialize(config)

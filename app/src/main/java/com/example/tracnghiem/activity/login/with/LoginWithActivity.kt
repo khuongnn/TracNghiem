@@ -1,16 +1,15 @@
-package com.example.tracnghiem.activity.login
+package com.example.tracnghiem.activity.login.with
 
 import android.content.Intent
 import android.util.Log
-import android.view.View
 import android.widget.Toast
-import androidx.annotation.NonNull
-import androidx.annotation.Nullable
 import com.example.tracnghiem.R
+import com.example.tracnghiem.activity.login.LoginViewModel
 import com.example.tracnghiem.activity.main.HomeActivity
 import com.example.tracnghiem.base.BaseActivity
 import com.example.tracnghiem.databinding.ActivityLoginWithBinding
 import com.example.tracnghiem.utils.Constants
+import com.facebook.AccessToken
 import com.facebook.CallbackManager
 import com.facebook.FacebookCallback
 import com.facebook.FacebookException
@@ -34,7 +33,7 @@ class LoginWithActivity : BaseActivity<ActivityLoginWithBinding>() {
     override fun setLayoutId(): Int = R.layout.activity_login_with
     private val mViewModel: LoginViewModel by viewModel()
 
-    private var callbackManager: CallbackManager? = null
+    private var  callbackManager = CallbackManager.Factory.create()
 
     override fun initView() {
         Timber.tag(TAG).e("Init view")
@@ -42,13 +41,17 @@ class LoginWithActivity : BaseActivity<ActivityLoginWithBinding>() {
 
     override fun initViewModel() {
         Timber.tag(TAG).e("Init view model")
+
+
     }
 
-    override fun initData() {}
+    override fun initData() {
+
+        val accessToken = AccessToken.getCurrentAccessToken()
+      //  accessToken?.let {  startActivity(Intent(applicationContext, HomeActivity::class.java)) }
+    }
 
     override fun initListener() {
-
-
         btnLoginLineTwitter.callback = object : Callback<TwitterSession>() {
             override fun success(result: Result<TwitterSession>) {
                 val session = TwitterCore.getInstance().sessionManager.activeSession
@@ -56,6 +59,7 @@ class LoginWithActivity : BaseActivity<ActivityLoginWithBinding>() {
                 val token = authToken.token
                 val secret = authToken.secret
                 loginTwitterUser(session)
+                startActivity(Intent(applicationContext, HomeActivity::class.java))
             }
 
             override fun failure(exception: TwitterException) {
@@ -73,6 +77,9 @@ class LoginWithActivity : BaseActivity<ActivityLoginWithBinding>() {
                 object : FacebookCallback<LoginResult> {
                     override fun onSuccess(result: LoginResult?) {
                         Log.d("MainActivity", "Facebook token: " + result?.accessToken?.token)
+                        val accessToken: AccessToken = result!!.accessToken
+                        Toast.makeText(this@LoginWithActivity, result?.accessToken?.token, Toast.LENGTH_LONG).show()
+
                         startActivity(Intent(applicationContext, HomeActivity::class.java))
                     }
 
@@ -81,7 +88,7 @@ class LoginWithActivity : BaseActivity<ActivityLoginWithBinding>() {
                     }
 
                     override fun onError(error: FacebookException?) {
-                        Log.d("MainActivity", "Facebook onError.")
+                        Toast.makeText(this@LoginWithActivity, "Fail ", Toast.LENGTH_LONG).show()
                     }
 
                 })
@@ -102,15 +109,19 @@ class LoginWithActivity : BaseActivity<ActivityLoginWithBinding>() {
         val loginDelegate = LoginDelegate.Factory.create()
         btnLoginLine.setLoginDelegate(loginDelegate)
 
-//        btnLoginLine.addLoginListener(object : LoginListener {
-//            override fun onLoginSuccess(@NonNull result: LineLoginResult) {
-//                Toast.makeText(this@LoginWithActivity, "Login success", Toast.LENGTH_SHORT).show()
-//            }
-//
-//            override fun onLoginFailure(@Nullable result: LineLoginResult?) {
-//                Toast.makeText(this@LoginWithActivity, "Login failure", Toast.LENGTH_SHORT).show()
-//            }
-//        })
+
+
+        btnLoginLine.addLoginListener(object : LoginListener {
+            override fun onLoginSuccess(result: LineLoginResult) {
+                Toast.makeText(this@LoginWithActivity,"Line Login Success: ${result.lineProfile}",Toast.LENGTH_SHORT).show()
+                Log.e("Line Login Success:", "${result.lineProfile}")
+            }
+            override fun onLoginFailure(result: LineLoginResult?) {
+                Toast.makeText(this@LoginWithActivity," Line Login Cancel",Toast.LENGTH_SHORT).show()
+            }
+        })
+
+
         btnLoginLine.setOnClickListener { view ->
             try {
                 // App-to-app login
@@ -131,13 +142,16 @@ class LoginWithActivity : BaseActivity<ActivityLoginWithBinding>() {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        btnLoginLineTwitter.onActivityResult(requestCode, resultCode, data)
         callbackManager?.onActivityResult(requestCode, resultCode, data)
-        if (requestCode != 1) {
-            Toast.makeText(this@LoginWithActivity, "Fail", Toast.LENGTH_LONG).show()
-            return
-        }
+        super.onActivityResult(requestCode, resultCode, data)
+
+         btnLoginLineTwitter.onActivityResult(requestCode, resultCode, data)
+
+
+//        if (requestCode != 1) {
+//            Toast.makeText(this@LoginWithActivity, "Fail", Toast.LENGTH_LONG).show()
+//            return
+//        }
 
         val result = LineLoginApi.getLoginResultFromIntent(data)
 

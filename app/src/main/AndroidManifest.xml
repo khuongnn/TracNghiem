@@ -16,7 +16,7 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".activity.main.mainpractice.PracticeActivity" />
-        <activity android:name=".activity.login.LoginWithActivity" />
+        <activity android:name=".activity.login.with.LoginWithActivity" />
 
 
         <meta-data
@@ -30,8 +30,8 @@
         <activity
             android:name="com.facebook.CustomTabActivity"
             android:exported="true">
-            <intent-filter><action android:name="android.intent.action.VIEW" />
-
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
@@ -39,6 +39,9 @@
             </intent-filter>
         </activity>
 
+        <provider android:authorities="com.facebook.app.FacebookContentProvider{2237340863241285}"
+            android:name="com.facebook.FacebookContentProvider"
+            android:exported="true"/>
 
 
         <activity

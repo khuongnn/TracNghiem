@@ -7,6 +7,7 @@ import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.example.tracnghiem.R
+import com.example.tracnghiem.event.BaseEvent
 import io.opencensus.trace.MessageEvent
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
@@ -34,6 +35,10 @@ abstract class BaseActivity<T : ViewDataBinding?> : AppCompatActivity() {
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     fun onMessageEvent(event: MessageEvent) {
+    }
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    fun onMessageEvent(event: BaseEvent) {
+
     }
 
     override fun onStop() {
