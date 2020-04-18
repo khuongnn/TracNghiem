@@ -46,8 +46,9 @@ class PracticeQuizFragment() : BaseFragment<FragmentSlidePageBinding>() {
         // Save ID nay lai
         // Sau do check trong  R.id.radA neu = thi gan lai cho dialog
         mListQuestion[mPagePosition].choseId = checkedId
-        mListQuestion[mPagePosition].setChoiceAns = getChoiceFromId(checkedId)
-        Toast.makeText(getApplicationContext(), "" + checkedId, Toast.LENGTH_SHORT).show()
+         mListQuestion[mPagePosition].setChoiceAns = getChoiceFromId(checkedId)
+
+        Toast.makeText(getApplicationContext(), "" +  mListQuestion[mPagePosition].setChoiceAns , Toast.LENGTH_SHORT).show()
     }
 
     fun getChoiceFromId(ID: Int): String {

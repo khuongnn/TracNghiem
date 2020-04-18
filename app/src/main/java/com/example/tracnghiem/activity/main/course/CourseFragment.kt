@@ -10,6 +10,7 @@ import com.example.tracnghiem.activity.main.course.coursedetail.CourseDetailFrag
 import com.example.tracnghiem.base.BaseFragment
 import com.example.tracnghiem.base.setData
 import com.example.tracnghiem.databinding.FragmentCoursesBinding
+import com.example.tracnghiem.utils.hideView
 import com.example.tracnghiem.utils.showView
 import kotlinx.android.synthetic.main.fragment_courses.*
 import kotlinx.android.synthetic.main.layout_empty.*
@@ -19,7 +20,6 @@ import org.koin.android.viewmodel.ext.android.viewModel
 class CourseFragment : BaseFragment<FragmentCoursesBinding>(), ICourseCallback {
     private val mViewModel: CourseViewModel by viewModel()
     override fun setLayoutId(): Int = R.layout.fragment_courses
-
     override fun initViewModel() {
         (binding as FragmentCoursesBinding).viewModel = mViewModel
         shimmerLayout.startShimmer()
@@ -34,6 +34,7 @@ class CourseFragment : BaseFragment<FragmentCoursesBinding>(), ICourseCallback {
             swipeRefreshLayout?.isRefreshing = false
             shimmerLayout.visibility = View.GONE
             shimmerLayout.stopShimmer()
+            tvEmpty.hideView()
             if (result == null) {
                 // show empty
                 tvEmpty.showView()
@@ -45,6 +46,8 @@ class CourseFragment : BaseFragment<FragmentCoursesBinding>(), ICourseCallback {
         })
         swipeRefreshLayout.setOnRefreshListener {
             mViewModel.requestListMosDetail()
+            mViewModel.updateData(arrayListOf())
+
         }
         mViewModel.getMosSelectedLiveData().observe(this, Observer { data ->
             addFragment(

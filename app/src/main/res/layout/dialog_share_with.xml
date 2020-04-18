@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/colorWhile"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnShareFb"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginStart="@dimen/_20dp"
+        android:layout_marginTop="@dimen/_20dp"
+        android:layout_marginEnd="@dimen/_20dp"
+        android:background="@color/background_FB"
+        android:drawableStart="@drawable/ic_facebook"
+        android:gravity="center"
+        android:paddingLeft="@dimen/_12dp"
+        android:text="Share with Facebook"
+        android:textAllCaps="false"
+        android:textColor="@color/textColorWhite"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnShareTw"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginStart="@dimen/_20dp"
+        android:layout_marginTop="@dimen/_5dp"
+        android:layout_marginEnd="@dimen/_20dp"
+        android:background="@color/background_Tw"
+        android:drawableStart="@drawable/ic_twitter"
+        android:gravity="center"
+        android:paddingLeft="@dimen/_12dp"
+        android:text="Share with Twiiter"
+        android:textAllCaps="false"
+        android:textColor="@color/textColorWhite"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnShareLine"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginStart="@dimen/_20dp"
+        android:layout_marginTop="@dimen/_5dp"
+        android:layout_marginEnd="@dimen/_20dp"
+        android:background="@color/background_Line"
+        android:drawableStart="@drawable/ic_line"
+        android:gravity="center"
+        android:paddingLeft="@dimen/_6dp"
+        android:text="Share with Line"
+        android:layout_marginBottom="@dimen/_20dp"
+        android:textAllCaps="false"
+        android:textColor="@color/textColorWhite"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+</LinearLayout>

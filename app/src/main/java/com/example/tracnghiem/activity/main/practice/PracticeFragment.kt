@@ -8,7 +8,10 @@ import com.example.tracnghiem.R
 import com.example.tracnghiem.activity.main.mainpractice.PracticeActivity
 import com.example.tracnghiem.base.BaseFragment
 import com.example.tracnghiem.databinding.FragmentPracticeBinding
+import com.example.tracnghiem.utils.hideView
+import com.example.tracnghiem.utils.showView
 import kotlinx.android.synthetic.main.fragment_practice.*
+import kotlinx.android.synthetic.main.layout_empty.*
 import kotlinx.android.synthetic.main.layout_shimmer_flexible.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
@@ -30,8 +33,10 @@ class PracticeFragment : BaseFragment<FragmentPracticeBinding>() {
             swipeRefreshLayout?.isRefreshing = false
             shimmerLayout.visibility = View.GONE
             shimmerLayout.stopShimmer()
+            tvEmpty.hideView()
             if (result == null) {
                 //do some thing
+                tvEmpty.showView()
             }
             result?.let { mViewModel.updateData(result) }
         })

@@ -17,6 +17,7 @@ import com.example.tracnghiem.base.BaseActivity
 import com.example.tracnghiem.data.model.Questions
 import com.example.tracnghiem.databinding.ActivityPracticeBinding
 import com.example.tracnghiem.utils.showView
+import jp.sbpayment.module.dto.SbpsWebCustom
 import kotlinx.android.synthetic.main.activity_practice.*
 import kotlinx.android.synthetic.main.layout_empty.*
 import org.koin.android.viewmodel.ext.android.viewModel
@@ -130,7 +131,6 @@ class PracticeActivity : BaseActivity<ActivityPracticeBinding>() {
             viewpager.currentItem = position
             dialog.dismiss()
         }
-
 
         val yesBtn = dialog.findViewById(R.id.btnFinish) as Button
         val noBtn = dialog.findViewById(R.id.btnCancel) as Button

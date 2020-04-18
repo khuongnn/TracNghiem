@@ -8,6 +8,7 @@ import com.example.tracnghiem.base.ITransitionFragmentCallback
 import com.example.tracnghiem.databinding.FragmentCourseLessonBinding
 import com.example.tracnghiem.utils.showView
 import androidx.lifecycle.Observer
+import com.example.tracnghiem.utils.hideView
 import kotlinx.android.synthetic.main.fragment_courses.*
 import kotlinx.android.synthetic.main.layout_empty.*
 import kotlinx.android.synthetic.main.layout_shimmer_flexible.*
@@ -38,6 +39,7 @@ class CourseLessonFragment(private val transitionFragmentCallback: ITransitionFr
             swipeRefreshLayout?.isRefreshing = false
             shimmerLayout.visibility = View.GONE
             shimmerLayout.stopShimmer()
+            tvEmpty.hideView()
             if (result == null) {
                 // show empty
                 tvEmpty.showView()

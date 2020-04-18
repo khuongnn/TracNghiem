@@ -7,9 +7,11 @@ import com.example.tracnghiem.activity.main.course.lesson.CourseLessonViewModel
 import com.example.tracnghiem.activity.main.mainpractice.TrainViewModel
 import com.example.tracnghiem.activity.main.practice.PracticeViewModel
 import com.example.tracnghiem.network.NetworkManager
-import com.example.tracnghiem.network.intercepter.QuizInterceptor
-import com.example.tracnghiem.network.services.QuizApiService
-import com.example.tracnghiem.network.services.QuizApiServiceImpl
+import com.example.tracnghiem.network.TNApiService
+import com.example.tracnghiem.network.intercepter.ApiInterceptor
+import com.example.tracnghiem.network.services.ApiService
+import com.example.tracnghiem.network.services.ApiServiceImpl
+import com.example.tracnghiem.utils.config.AppConfig
 import com.example.tracnghiem.utils.PreferencesHelper
 import com.google.gson.GsonBuilder
 import okhttp3.Interceptor
@@ -26,16 +28,18 @@ val appModule = module {
     single { PreferencesHelper(get()) }
     single {
         // Webservice
-        createWebService<QuizApiService>(
-            createOkHttpClient(QuizInterceptor()), "https://www.google.com.vn/"
+        createWebService<ApiService>(
+            createOkHttpClient(ApiInterceptor()), AppConfig.SERVER_URL
         )
     }
 }
 val dataModule = module {
-    single { QuizApiServiceImpl(get()) }
+    single { ApiServiceImpl(get()) }
+    single { TNApiService(get()) }
     factory { NetworkManager(get()) }
+
     // view  model class
-    viewModel { LoginViewModel() }
+    viewModel { LoginViewModel(get ()) }
     viewModel { CourseViewModel() }
     viewModel { TrainViewModel() }
     viewModel { PracticeViewModel() }

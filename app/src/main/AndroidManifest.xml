@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
 
 
     <application
@@ -15,8 +16,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+
+
         <activity android:name=".activity.main.mainpractice.PracticeActivity" />
-        <activity android:name=".activity.login.with.LoginWithActivity" />
+        <activity android:name=".activity.login.signup.SignUpActivity" />
+        <activity android:name=".activity.main.sharewith.ShareWithActivity" />
+
+
+        <activity android:name=".activity.pay.AddPaymentActivity" />
+        <activity android:name=".activity.pay.PayActivity" />
+
+        <activity android:name="jp.sbpayment.module.SbpsSettlementWebActivity"
+                    android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
 
 
         <meta-data
@@ -28,16 +40,9 @@
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="@string/app_name" />
         <activity
-            android:name="com.facebook.CustomTabActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data android:scheme="@string/fb_login_protocol_scheme" />
-            </intent-filter>
-        </activity>
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
 
         <provider android:authorities="com.facebook.app.FacebookContentProvider{2237340863241285}"
             android:name="com.facebook.FacebookContentProvider"

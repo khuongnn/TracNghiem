@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKeys
+import java.util.*
 
 class PreferencesHelper constructor(context: Context) {
     private val sharedPref: SharedPreferences
@@ -31,7 +32,7 @@ class PreferencesHelper constructor(context: Context) {
         editor.putInt(key,value)
         editor.apply()
     }
-/*
+
 
     fun getDouble(key: String): Double {
         if (getLong(key) == 0L) {
@@ -70,7 +71,6 @@ class PreferencesHelper constructor(context: Context) {
         editor.apply()
     }
 
-    */
     companion object {
         const val PREF_NAME = "Name_pref"
 
