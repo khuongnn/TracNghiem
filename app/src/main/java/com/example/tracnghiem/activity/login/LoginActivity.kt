@@ -118,6 +118,10 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>() {
                 })
         }
 
+
+        btnLoginLi.setChannelId(Constants.CHANNEL_ID)
+        btnLoginLi.enableLineAppAuthentication(true)
+
         btnLoginLi.setAuthenticationParams(
             LineAuthenticationParams.Builder()
                 .scopes(listOf(Scope.PROFILE))
