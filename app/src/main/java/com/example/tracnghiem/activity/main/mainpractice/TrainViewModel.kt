@@ -6,6 +6,7 @@ class TrainViewModel : BaseViewModel() {
     private val mListQuestions = QuestionLiveData()
 
     fun requestListQuestion() = mListQuestions.fetchList()
+
     fun getListQuestionLiveData() = mListQuestions.getListQuestions()
 
 

@@ -1,57 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:padding="@dimen/_12dp">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <GridView
-        android:id="@+id/llGirdView"
-        android:layout_width="match_parent"
-        tools:listitem="@layout/item_check_answer"
-        android:layout_height="400dp"
-        android:numColumns="3" />
-
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_20dp"
-        android:weightSum="5"
-        android:padding="@dimen/_12dp"
-        android:background="@color/colorWhile"
-        android:orientation="horizontal">
+        android:gravity="center"
+        app:layout_constraintHeight_percent="0.7"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <Button
-            android:id="@+id/btnCancel"
-            android:layout_width="0dp"
-            android:layout_weight="2"
-            android:textSize="20sp"
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:drawableEnd="@drawable/ic_cancel"
+            android:layout_height="45dp"
+            android:background="@color/bookmarkTabSelectedColor"
+            android:gravity="center"
             android:textStyle="bold"
             android:textColor="@color/colorWhile"
-            android:layout_height="match_parent"
-            android:background="@drawable/dialog_button"
-            android:text="Cancel" />
+            android:text="Question"
+            android:paddingStart="@dimen/_20dp"
+            android:textSize="@dimen/text_size_20" />
 
+        <GridView
+            android:id="@+id/llGirdView"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:paddingStart="@dimen/_16dp"
+            android:padding="@dimen/_2dp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_vertical"
+            android:layout_below="@id/tvTitle"
+            android:layout_marginTop="2dp"
+            android:numColumns="3"
+            tools:listitem="@layout/item_check_answer" />
 
-        <Button
-            android:id="@+id/btnGon"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:background="@color/colorWhile" />
-        <Button
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_below="@id/llGirdView"
+            android:layout_width="match_parent"
             android:id="@+id/btnFinish"
-            android:layout_weight="2"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_width="0dp"
+            android:drawableEnd="@drawable/ic_done"
+            android:layout_height="45dp"
+            android:layout_marginTop="@dimen/_3dp"
+            android:background="@color/bookmarkTabSelectedColor"
+            android:gravity="center"
+            android:padding="@dimen/_2dp"
             android:textColor="@color/colorWhile"
-            android:layout_height="match_parent"
-            android:background="@drawable/dialog_button"
-            android:text="Finish" />
+            android:textStyle="bold"
+            android:paddingStart="@dimen/_20dp"
+            android:text="Finish and Check Point"
+            android:textSize="@dimen/text_size_18" />
 
-    </LinearLayout>
-
-</LinearLayout>
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

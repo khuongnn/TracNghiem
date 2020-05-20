@@ -10,5 +10,6 @@ data class Questions(
     var position: Int = 0,
     var question: String?= "",
     var choseId: Int?= -1,
-    var setChoiceAns: String?= ""
+    var setChoiceAns: String?= "",
+    var  idQuestion: String?=""
 )

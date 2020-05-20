@@ -102,11 +102,12 @@
     <color name="myPostTabUnselectedColor">#99000000</color>
     <color name="background_view_count">#66000000</color>
     <color name="background_login">#AEE5EC</color>
-    <color name="background_practice">#0F000000</color>
+    <color name="background_practice">#12E1C8C8</color>
     <color name="background_tab_layout">#FCFFFF</color>
 
     <color name="background_FB">#3B5998</color>
     <color name="background_Tw">#03A9F4</color>
     <color name="background_Line">#00c300</color>
+    <color name="background_text_choice">#FFFFFF</color>
 
 </resources>

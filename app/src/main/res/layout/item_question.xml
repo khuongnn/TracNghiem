@@ -28,7 +28,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:textColor="@color/textColorDark"
-            android:textSize="28sp"
+            android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -41,7 +41,8 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:textColor="@color/textColorDark"
-            android:textSize="22sp"
+            android:textSize="18sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvNumber"
@@ -52,8 +53,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:background="@color/colorWhile"
-            android:backgroundTint="@color/colorWhile"
+            android:background="@drawable/bg_border_radio_group"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvQuestion">
@@ -63,14 +63,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_12dp"
+                android:buttonTint="@color/colorRadio"
                 android:layout_marginTop="@dimen/_12dp"
                 android:layout_marginEnd="@dimen/_12dp"
-                android:background="@drawable/bg_radio_drawable"
-                android:buttonTint="@color/colorRadio"
+                android:background="@drawable/bg_border_radio"
                 android:checked="false"
-                android:textColor="@color/textColorRatioButton"
-                android:textSize="18sp"
-                android:textStyle="bold"
+                android:textColor="@color/textColorDark"
+                android:textSize="16sp"
                 tools:text="Trả lời 1" />
 
             <androidx.appcompat.widget.AppCompatRadioButton
@@ -78,14 +77,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_12dp"
+                android:buttonTint="@color/colorRadio"
                 android:layout_marginTop="@dimen/_12dp"
                 android:layout_marginEnd="@dimen/_12dp"
-                android:background="@drawable/bg_radio_drawable"
-                android:buttonTint="@color/colorRadio"
+                android:background="@drawable/bg_border_radio"
                 android:checked="false"
-                android:textColor="@color/textColorRatioButton"
-                android:textSize="18sp"
-                android:textStyle="bold"
+                android:textColor="@color/textColorDark"
+                android:textSize="16sp"
                 tools:text="Trả lời 2" />
 
             <androidx.appcompat.widget.AppCompatRadioButton
@@ -95,12 +93,11 @@
                 android:layout_marginStart="@dimen/_12dp"
                 android:layout_marginTop="@dimen/_12dp"
                 android:layout_marginEnd="@dimen/_12dp"
-                android:background="@drawable/bg_radio_drawable"
+                android:background="@drawable/bg_border_radio"
                 android:buttonTint="@color/colorRadio"
                 android:checked="false"
-                android:textColor="@color/textColorRatioButton"
-                android:textSize="18sp"
-                android:textStyle="bold"
+                android:textColor="@color/textColorDark"
+                android:textSize="16sp"
                 tools:text="Trả lời 3" />
 
             <androidx.appcompat.widget.AppCompatRadioButton
@@ -111,12 +108,11 @@
                 android:layout_marginTop="@dimen/_12dp"
                 android:layout_marginEnd="@dimen/_12dp"
                 android:layout_marginBottom="12dp"
-                android:background="@drawable/bg_radio_drawable"
+                android:background="@drawable/bg_border_radio"
                 android:buttonTint="@color/colorRadio"
                 android:checked="false"
-                android:textColor="@color/textColorRatioButton"
-                android:textSize="18sp"
-                android:textStyle="bold"
+                android:textColor="@color/textColorDark"
+                android:textSize="16sp"
                 tools:text="Trả lời 4" />
         </RadioGroup>
 

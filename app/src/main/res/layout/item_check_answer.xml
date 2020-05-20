@@ -1,35 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
+    android:layout_width="@dimen/_60dp"
     android:layout_marginStart="@dimen/_2dp"
     android:layout_marginTop="@dimen/_4dp"
-    android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="60dp"
     android:orientation="horizontal"
     android:padding="@dimen/_4dp">
 
     <TextView
         android:id="@+id/tvNumAns"
-        android:layout_width="wrap_content"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        tools:text="Câu 1:"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:textStyle="bold"
-        android:textColor="@color/textColorDark"
+        android:gravity="center"
+        android:visibility="visible"
+        android:padding="@dimen/_5dp"
+        android:text="1"
+        android:textColor="@color/tagTextColor"
         android:textSize="20sp"
+        android:background="@drawable/bg_border_unchose"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvAnswer"
-        android:layout_width="wrap_content"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:text="A"
-        android:textColor="@color/colorRed"
-        android:textSize="19sp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        android:gravity="center"
+        android:padding="@dimen/_5dp"
+        android:textSize="20sp"
+        android:background="@drawable/bg_border_chose"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-</LinearLayout>
+<!--    <TextView-->
+<!--        android:id="@+id/tvAnswer2"-->
+<!--        android:layout_width="wrap_content"-->
+<!--          android:layout_height="wrap_content"-->
+<!--        android:text="A"-->
+<!--        android:visibility="gone"-->
+<!--        android:textColor="@color/colorRed"-->
+<!--        android:textSize="19sp"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+</RelativeLayout>

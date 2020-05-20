@@ -1,19 +1,15 @@
 package com.example.tracnghiem.activity.login
 
 import android.content.Intent
+import android.os.Handler
 import android.util.Log
-import android.view.View
 import android.widget.Toast
-import androidx.lifecycle.Observer
 import com.example.tracnghiem.R
-import com.example.tracnghiem.activity.login.signup.SignUpActivity
 import com.example.tracnghiem.activity.main.HomeActivity
-import com.example.tracnghiem.activity.pay.AddPaymentActivity
-import com.example.tracnghiem.activity.pay.PayActivity
 import com.example.tracnghiem.base.BaseActivity
 import com.example.tracnghiem.databinding.ActivityLoginBinding
-import com.example.tracnghiem.network.model.response.UserResponse
 import com.example.tracnghiem.utils.Constants
+import com.example.tracnghiem.utils.dialog.CustomProgressDialog
 import com.example.tracnghiem.utils.hideSoftKeyboard
 import com.facebook.AccessToken
 import com.facebook.CallbackManager
@@ -33,13 +29,12 @@ import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.layout_item_login.*
 import org.koin.android.viewmodel.ext.android.viewModel
 import timber.log.Timber
-import java.net.HttpURLConnection
-import java.util.*
 
 class LoginActivity : BaseActivity<ActivityLoginBinding>() {
     override fun setLayoutId(): Int = R.layout.activity_login
     private val mViewModel: LoginViewModel by viewModel()
     private var callbackManager = CallbackManager.Factory.create()
+    private var loadDialog = CustomProgressDialog()
 
 
     override fun initView() {
@@ -56,11 +51,17 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>() {
 
     override fun initListener() {
         btnLogin.setOnClickListener {
+            loadDialog.show(this, "Please Wait")
             val email = edtEmail.text.toString()
             val password = edtPassword.text.toString()
+
             mainContainer.hideSoftKeyboard(this)
-            loginLoad.visibility = View.VISIBLE
-            navigationToMainScreen()
+            Handler().postDelayed({
+                navigationToMainScreen()
+                loadDialog.dialog.dismiss()
+            },3000)
+
+         //
 
 //            mViewModel.login(email, password)
 //            mViewModel.loginResponseLiveData.observe(this, Observer {
@@ -134,7 +135,8 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>() {
 
         btnLoginLi.addLoginListener(object : LoginListener {
             override fun onLoginSuccess(result: LineLoginResult) {
-                Toast.makeText(this@LoginActivity, "Login Success: ${result.lineProfile}",
+                Toast.makeText(
+                    this@LoginActivity, "Login Success: ${result.lineProfile}",
                     Toast.LENGTH_SHORT
                 ).show()
                 Log.e("Line Login Success:", "${result.lineProfile}")
@@ -173,7 +175,8 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>() {
 
         // Line
         if (requestCode != 1) {
-            return }
+            return
+        }
 
         val result = LineLoginApi.getLoginResultFromIntent(data)
 

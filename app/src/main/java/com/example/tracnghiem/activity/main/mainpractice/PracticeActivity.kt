@@ -8,6 +8,7 @@ import android.view.Window
 import android.widget.AdapterView.OnItemClickListener
 import android.widget.Button
 import android.widget.GridView
+import android.widget.TextView
 import androidx.lifecycle.Observer
 import com.example.tracnghiem.R
 import com.example.tracnghiem.activity.main.mainpractice.fragment.CheckAnswerAdapter
@@ -17,7 +18,6 @@ import com.example.tracnghiem.base.BaseActivity
 import com.example.tracnghiem.data.model.Questions
 import com.example.tracnghiem.databinding.ActivityPracticeBinding
 import com.example.tracnghiem.utils.showView
-import jp.sbpayment.module.dto.SbpsWebCustom
 import kotlinx.android.synthetic.main.activity_practice.*
 import kotlinx.android.synthetic.main.layout_empty.*
 import org.koin.android.viewmodel.ext.android.viewModel
@@ -40,8 +40,7 @@ class PracticeActivity : BaseActivity<ActivityPracticeBinding>() {
     }
 
     // example
-    private var itemList =  ArrayList<Questions> ()
-
+    private var itemList = ArrayList<Questions>()
 
 
     override fun initData() {
@@ -59,16 +58,28 @@ class PracticeActivity : BaseActivity<ActivityPracticeBinding>() {
 
     }
 
+    var data = ArrayList<Questions>()
     override fun initListener() {
         mViewModel.getListQuestionLiveData().observe(this, Observer { result ->
-            result?.let {
-                mListQuestion = result
-                itemList= mListQuestion
-                val mData = mListQuestion.size
 
+            result?.let {
+                try {
+                    for (i in 0..it.size) {
+                        if (it[i].idQuestion.equals("test1")) {
+                            data.add(it[i])
+                        }
+                    }
+                } catch (ex: Exception) {
+
+                }
+
+
+                mListQuestion = data
+                //  mListQuestion = result
+                itemList = mListQuestion
                 viewpager.offscreenPageLimit = 3
                 val mPageAdapter = SliderPageAdapter(supportFragmentManager)
-                for (i in 0..mData) {
+                for (i in 0..mListQuestion.size) {
                     bundle = Bundle()
                     bundle.putSerializable("DATA", mListQuestion)
                     bundle.putInt("POSITION", i)
@@ -119,7 +130,7 @@ class PracticeActivity : BaseActivity<ActivityPracticeBinding>() {
 
     private fun showDialog(title: String) {
         val dialog = Dialog(this)
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+//        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog.setCancelable(false)
         dialog.setContentView(R.layout.dialog_check_answer)
 
@@ -132,12 +143,14 @@ class PracticeActivity : BaseActivity<ActivityPracticeBinding>() {
             dialog.dismiss()
         }
 
-        val yesBtn = dialog.findViewById(R.id.btnFinish) as Button
-        val noBtn = dialog.findViewById(R.id.btnCancel) as Button
+        val yesBtn = dialog.findViewById(R.id.btnFinish) as TextView
+        val noBtn = dialog.findViewById(R.id.tvTitle) as TextView
         yesBtn.setOnClickListener {
             dialog.dismiss()
+            // navigate to point activity
         }
-        noBtn.setOnClickListener { dialog.dismiss() }
+        noBtn.setOnClickListener {
+            dialog.dismiss() }
         dialog.show()
     }
 

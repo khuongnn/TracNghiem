@@ -34,9 +34,12 @@ internal class CheckAnswerAdapter internal constructor(
             holder = convertView.tag as ItemHolder
         }
 
-        holder.name!!.text =  "Câu "+ this.itemList!![position].position+":"
+        holder.name!!.text =  this.itemList!![position].position.toString()
+        if(holder.name!!.text.isNotEmpty()){
 
-        holder.ans!!.text = this.itemList!![position].setChoiceAns
+        }
+
+        holder.ans!!.text = this.itemList[position].setChoiceAns
 
         return convertView
     }

@@ -22,18 +22,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/input_text_height_login"
                 android:background="@color/colorWhile"
-                android:hint="email"
+                android:hint="Email"
+                android:gravity="center"
                 android:inputType="textEmailAddress"
-                android:maxLength="255"
                 android:paddingStart="@dimen/_20dp"
                 android:paddingEnd="@dimen/_20dp"
                 android:textColorHint="@color/loginHintColor"
-                android:textSize="@dimen/text_size_14" />
+                android:textSize="@dimen/text_size_18" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/etPasswordLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:layout_marginTop="@dimen/_10dp"
                 app:hintEnabled="false"
                 app:passwordToggleEnabled="true">
@@ -43,13 +44,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/input_text_height_login"
                     android:background="@color/colorWhile"
-                    android:hint="password"
+                    android:hint="Password"
                     android:inputType="textPassword"
                     android:maxLength="30"
-                    android:paddingStart="@dimen/_20dp"
-                    android:paddingEnd="@dimen/_20dp"
+                    android:paddingStart="@dimen/_60dp"
+                    android:gravity="center"
                     android:textColorHint="@color/loginHintColor"
-                    android:textSize="@dimen/text_size_14" />
+                    android:textSize="@dimen/text_size_18" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <CheckBox
@@ -57,7 +58,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_12dp"
-                android:background="@color/colorWhile"
+                android:textSize="@dimen/text_size_16"
                 android:buttonTint="@color/background_Tw"
                 android:paddingLeft="@dimen/_6dp"
                 android:text="Save Login?"
@@ -86,7 +87,7 @@
             android:layout_marginStart="@dimen/_20dp"
             android:layout_marginTop="120dp"
             android:layout_marginEnd="@dimen/_20dp"
-            android:background="@color/colorWhile"
+            android:background="@color/tabSelectedTextColor"
             android:gravity="center"
             android:text="login"
             android:textAllCaps="true"
@@ -102,7 +103,7 @@
             android:layout_marginStart="@dimen/_20dp"
             android:layout_marginTop="@dimen/_12dp"
             android:layout_marginEnd="@dimen/_20dp"
-            android:background="@color/colorWhile"
+            android:background="@color/tabSelectedTextColor"
             android:gravity="center"
             android:text="SIGN UP"
             android:textAllCaps="true"
@@ -113,7 +114,7 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvView"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/button_height"
+            android:layout_height="wrap_content"
             android:layout_below="@id/btnSignUp"
             android:layout_marginStart="@dimen/_20dp"
             android:layout_marginTop="120dp"
@@ -128,19 +129,6 @@
         <include layout="@layout/layout_item_login" />
 
 
-        <RelativeLayout
-            android:id="@+id/loginLoad"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:clickable="true"
-            android:focusable="true"
-            android:visibility="gone">
-
-            <include
-                layout="@layout/loading_layout"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-        </RelativeLayout>
     </RelativeLayout>
 
 </layout>
