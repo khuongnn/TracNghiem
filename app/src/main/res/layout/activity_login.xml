@@ -21,13 +21,13 @@
                 android:id="@+id/edtEmail"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/input_text_height_login"
-                android:background="@color/colorWhile"
+                android:background="@drawable/edt_border"
                 android:hint="Email"
                 android:gravity="center"
                 android:inputType="textEmailAddress"
                 android:paddingStart="@dimen/_20dp"
                 android:paddingEnd="@dimen/_20dp"
-                android:textColorHint="@color/loginHintColor"
+                android:textColorHint="@color/tabDividerUnselected"
                 android:textSize="@dimen/text_size_18" />
 
             <com.google.android.material.textfield.TextInputLayout
@@ -43,13 +43,13 @@
                     android:id="@+id/edtPassword"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/input_text_height_login"
-                    android:background="@color/colorWhile"
+                    android:background="@drawable/edt_border"
                     android:hint="Password"
                     android:inputType="textPassword"
                     android:maxLength="30"
                     android:paddingStart="@dimen/_60dp"
                     android:gravity="center"
-                    android:textColorHint="@color/loginHintColor"
+                    android:textColorHint="@color/tabDividerUnselected"
                     android:textSize="@dimen/text_size_18" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -87,7 +87,7 @@
             android:layout_marginStart="@dimen/_20dp"
             android:layout_marginTop="120dp"
             android:layout_marginEnd="@dimen/_20dp"
-            android:background="@color/tabSelectedTextColor"
+            android:background="@drawable/bg_button_boder"
             android:gravity="center"
             android:text="login"
             android:textAllCaps="true"
@@ -103,7 +103,7 @@
             android:layout_marginStart="@dimen/_20dp"
             android:layout_marginTop="@dimen/_12dp"
             android:layout_marginEnd="@dimen/_20dp"
-            android:background="@color/tabSelectedTextColor"
+            android:background="@drawable/bg_button_boder"
             android:gravity="center"
             android:text="SIGN UP"
             android:textAllCaps="true"
@@ -120,9 +120,10 @@
             android:layout_marginTop="120dp"
             android:layout_marginEnd="@dimen/_20dp"
             android:gravity="center"
+            android:visibility="invisible"
             android:text="Login With ?"
             android:textAllCaps="true"
-            android:textColor="@color/textColorDark"
+            android:textColor="@color/textColorWhite"
             android:textSize="@dimen/text_size_16"
             android:textStyle="bold" />
 

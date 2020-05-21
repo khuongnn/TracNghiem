@@ -35,11 +35,11 @@ internal class CheckAnswerAdapter internal constructor(
         }
 
         holder.name!!.text =  this.itemList!![position].position.toString()
-        if(holder.name!!.text.isNotEmpty()){
-
+        if(!this.itemList[position].setChoiceAns.isNullOrEmpty()){
+            holder.ans?.visibility = View.VISIBLE
+        }else{
+            holder.ans?.visibility = View.GONE
         }
-
-        holder.ans!!.text = this.itemList[position].setChoiceAns
 
         return convertView
     }

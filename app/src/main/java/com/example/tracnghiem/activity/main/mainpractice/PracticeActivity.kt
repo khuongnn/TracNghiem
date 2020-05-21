@@ -1,22 +1,25 @@
 package com.example.tracnghiem.activity.main.mainpractice
 
 import android.app.Dialog
+import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.os.Handler
 import android.view.View
 import android.view.Window
 import android.widget.AdapterView.OnItemClickListener
-import android.widget.Button
 import android.widget.GridView
 import android.widget.TextView
 import androidx.lifecycle.Observer
 import com.example.tracnghiem.R
+import com.example.tracnghiem.activity.login.LoginActivity
 import com.example.tracnghiem.activity.main.mainpractice.fragment.CheckAnswerAdapter
 import com.example.tracnghiem.activity.main.mainpractice.fragment.PracticeQuizFragment
 import com.example.tracnghiem.adapter.SliderPageAdapter
 import com.example.tracnghiem.base.BaseActivity
 import com.example.tracnghiem.data.model.Questions
 import com.example.tracnghiem.databinding.ActivityPracticeBinding
+import com.example.tracnghiem.utils.dialog.CustomProgressDialog
 import com.example.tracnghiem.utils.showView
 import kotlinx.android.synthetic.main.activity_practice.*
 import kotlinx.android.synthetic.main.layout_empty.*
@@ -26,9 +29,8 @@ import org.koin.android.viewmodel.ext.android.viewModel
 class PracticeActivity : BaseActivity<ActivityPracticeBinding>() {
     private val mViewModel: TrainViewModel by viewModel()
     private lateinit var bundle: Bundle
-
-
     private var mListQuestion = ArrayList<Questions>()
+    private val loadingDialog = CustomProgressDialog()
 
     override fun setLayoutId(): Int = R.layout.activity_practice
 
@@ -118,19 +120,26 @@ class PracticeActivity : BaseActivity<ActivityPracticeBinding>() {
         }.start()
 
         tvTitle.setOnClickListener {
+            Handler().postDelayed({
+
+                    intent = Intent(this, LoginActivity::class.java)
+//                    loadingDialog.dialog.dismiss()
+                    startActivity(intent)
+
+            }, 4000)
             checkAnswer()
         }
-
-
     }
 
     private fun checkAnswer() {
+
+
         showDialog("name")
     }
 
     private fun showDialog(title: String) {
         val dialog = Dialog(this)
-//        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog.setCancelable(false)
         dialog.setContentView(R.layout.dialog_check_answer)
 
@@ -146,11 +155,12 @@ class PracticeActivity : BaseActivity<ActivityPracticeBinding>() {
         val yesBtn = dialog.findViewById(R.id.btnFinish) as TextView
         val noBtn = dialog.findViewById(R.id.tvTitle) as TextView
         yesBtn.setOnClickListener {
+           // loadingDialog.show(this, "Please Wait")
             dialog.dismiss()
-            // navigate to point activity
         }
         noBtn.setOnClickListener {
-            dialog.dismiss() }
+            dialog.dismiss()
+        }
         dialog.show()
     }
 

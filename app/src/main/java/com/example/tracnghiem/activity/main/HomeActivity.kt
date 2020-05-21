@@ -35,8 +35,6 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
         addFragment(mCourseFragment, R.id.mainContainer)
         addFragment(mMyPageFragment, R.id.mainContainer)
         addFragment(mPracticeFragment, R.id.mainContainer)
-
-
         showFragmentAt(TNBottomNavigation.TAB_COURSE_INDEX)
     }
 
@@ -62,9 +60,7 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
                         mMyPageFragment.popAllBackStackFragment()
                     }
 
-
                 }
-
             }
 
             override fun onTabChange(oldPosition: Int, currentPosition: Int) {

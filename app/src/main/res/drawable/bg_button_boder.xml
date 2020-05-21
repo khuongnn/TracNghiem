@@ -2,7 +2,7 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="MissingDefaultResource">
-    <solid android:color="#6D76ACC6"/>
+    <solid android:color="#85E53935"/>
 
     <stroke
         android:width="2dp"
