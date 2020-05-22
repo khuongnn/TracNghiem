@@ -15,6 +15,7 @@ import com.example.tracnghiem.R
 import com.example.tracnghiem.activity.login.LoginActivity
 import com.example.tracnghiem.activity.main.mainpractice.fragment.CheckAnswerAdapter
 import com.example.tracnghiem.activity.main.mainpractice.fragment.PracticeQuizFragment
+import com.example.tracnghiem.activity.main.mainpractice.mainpoint.CheckPointActivity
 import com.example.tracnghiem.adapter.SliderPageAdapter
 import com.example.tracnghiem.base.BaseActivity
 import com.example.tracnghiem.data.model.Questions
@@ -120,13 +121,6 @@ class PracticeActivity : BaseActivity<ActivityPracticeBinding>() {
         }.start()
 
         tvTitle.setOnClickListener {
-            Handler().postDelayed({
-
-                    intent = Intent(this, LoginActivity::class.java)
-//                    loadingDialog.dialog.dismiss()
-                    startActivity(intent)
-
-            }, 4000)
             checkAnswer()
         }
     }
@@ -155,8 +149,16 @@ class PracticeActivity : BaseActivity<ActivityPracticeBinding>() {
         val yesBtn = dialog.findViewById(R.id.btnFinish) as TextView
         val noBtn = dialog.findViewById(R.id.tvTitle) as TextView
         yesBtn.setOnClickListener {
-           // loadingDialog.show(this, "Please Wait")
-            dialog.dismiss()
+
+            Handler().postDelayed({
+                loadingDialog.show(this, "Please Wait")
+                intent = Intent(this, CheckPointActivity::class.java)
+
+                loadingDialog.dialog.dismiss()
+                startActivity(intent)
+                dialog.dismiss()
+            }, 4000)
+
         }
         noBtn.setOnClickListener {
             dialog.dismiss()

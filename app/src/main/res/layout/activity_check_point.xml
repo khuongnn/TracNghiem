@@ -1,4 +1,5 @@
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
         <variable
@@ -25,17 +26,6 @@
                 android:padding="6dp"
                 android:src="@drawable/ic_alarm_on"
                 android:visibility="visible" />
-
-            <ImageView
-                android:id="@+id/imgAlarmOff"
-                android:layout_width="50dp"
-                android:layout_height="match_parent"
-                android:layout_marginStart="@dimen/_4dp"
-                android:padding="6dp"
-                android:src="@drawable/ic_alarm_off"
-                android:visibility="gone" />
-
-
 
             <TextView
                 android:id="@+id/tvGone"
@@ -66,8 +56,106 @@
                 android:textColor="@color/colorWhile"
                 android:textSize="@dimen/text_size_20"
                 android:textStyle="bold" />
-
         </LinearLayout>
+        <RelativeLayout
+            android:layout_below="@id/llContainer"
+            android:id="@+id/llAnswer"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:orientation="vertical">
+            <LinearLayout
+                android:id="@+id/llTotal"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginStart="@dimen/_40dp"
+                android:layout_height="50dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="Đã làm"
+                    android:drawableLeft="@drawable/ic_done"
+                    android:gravity="center"
+                    android:drawablePadding="@dimen/_10dp"
+                    android:layout_height="match_parent"/>
+                <ProgressBar
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="@dimen/_200dp"
+                    android:backgroundTint="@color/colorRed"
+                    android:layout_height="match_parent"
+                    android:paddingStart="@dimen/_12dp"
+                    android:paddingEnd="@dimen/_12dp"
+                    app:layout_widthPercent="80%"
+                    android:layout_gravity="center_horizontal"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="24/30"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llTrueAnswer"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginStart="@dimen/_40dp"
+                android:layout_below="@id/llTotal"
+                android:layout_height="50dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="Đúng"
+                    android:drawableLeft="@drawable/ic_check_true"
+                    android:gravity="center"
+                    android:drawablePadding="@dimen/_10dp"
+                    android:layout_height="match_parent"/>
+                <ProgressBar
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="@dimen/_200dp"
+                    android:backgroundTint="@color/colorRed"
+                    android:layout_height="match_parent"
+                    app:layout_widthPercent="80%"
+                    android:paddingStart="@dimen/_12dp"
+                    android:paddingEnd="@dimen/_12dp"
+                    android:layout_gravity="center_horizontal"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="24/30"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_below="@+id/llTrueAnswer"
+                android:layout_marginStart="@dimen/_40dp"
+                android:layout_height="50dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="Sai"
+                    android:drawableLeft="@drawable/ic_cancel_red"
+                    android:gravity="center"
+                    android:drawablePadding="@dimen/_10dp"
+                    android:layout_height="match_parent"/>
+                <ProgressBar
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="@dimen/_200dp"
+                    android:backgroundTint="@color/colorRed"
+                    android:layout_height="match_parent"
+                    app:layout_widthPercent="80%"
+                    android:paddingStart="@dimen/_12dp"
+                    android:paddingEnd="@dimen/_12dp"
+                    android:layout_gravity="center_horizontal"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="24/30"/>
+            </LinearLayout>
+
+
+        </RelativeLayout>
     </RelativeLayout>
 </layout>
 

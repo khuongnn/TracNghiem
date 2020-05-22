@@ -59,7 +59,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>() {
             Handler().postDelayed({
                 navigationToMainScreen()
                 loadDialog.dialog.dismiss()
-            },3000)
+            },2000)
 
          //
 
