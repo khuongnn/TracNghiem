@@ -15,6 +15,7 @@ import com.example.tracnghiem.R
 import com.example.tracnghiem.activity.login.LoginActivity
 import com.example.tracnghiem.activity.main.mainpractice.fragment.CheckAnswerAdapter
 import com.example.tracnghiem.activity.main.mainpractice.fragment.PracticeQuizFragment
+import com.example.tracnghiem.activity.main.mainpractice.fragment.PracticeQuizFragment.Companion.checkPoint
 import com.example.tracnghiem.activity.main.mainpractice.mainpoint.CheckPointActivity
 import com.example.tracnghiem.adapter.SliderPageAdapter
 import com.example.tracnghiem.base.BaseActivity
@@ -28,6 +29,9 @@ import org.koin.android.viewmodel.ext.android.viewModel
 
 
 class PracticeActivity : BaseActivity<ActivityPracticeBinding>() {
+    companion object{
+        var sizeList : Int = 0
+    }
     private val mViewModel: TrainViewModel by viewModel()
     private lateinit var bundle: Bundle
     private var mListQuestion = ArrayList<Questions>()
@@ -81,6 +85,7 @@ class PracticeActivity : BaseActivity<ActivityPracticeBinding>() {
                 mListQuestion = data
                 itemList = mListQuestion
                 viewpager.offscreenPageLimit = 3
+                sizeList = mListQuestion.size
 
                 for (i in 0..mListQuestion.size) {
                     bundle = Bundle()
@@ -149,6 +154,8 @@ class PracticeActivity : BaseActivity<ActivityPracticeBinding>() {
         yesBtn.setOnClickListener {
             loadingDialog.show(this, "Please Wait")
             intent = Intent(this, CheckPointActivity::class.java)
+            intent.putExtra("checkPoint",checkPoint)
+            intent.putExtra("sizeList",sizeList)
             loadingDialog.dialog.dismiss()
             startActivity(intent)
             dialog.dismiss()
@@ -171,4 +178,5 @@ class PracticeActivity : BaseActivity<ActivityPracticeBinding>() {
             // viewPager.currentItem = viewPager.currentItem - 1
         }
     }
+
 }

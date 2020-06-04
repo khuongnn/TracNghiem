@@ -1,5 +1,6 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
         <variable
@@ -86,10 +87,17 @@
                     android:layout_gravity="center_horizontal"
                     />
                 <TextView
+                    android:id="@+id/tvHaveDo"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="30/30"/>
+                    tools:text="30"/>
+                <TextView
+                    android:id="@+id/sizeListData"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    tools:text="30"/>
             </LinearLayout>
 
             <LinearLayout
@@ -115,11 +123,19 @@
                     android:paddingEnd="@dimen/_12dp"
                     android:layout_gravity="center_horizontal"
                     />
+
                 <TextView
+                    android:id="@+id/tvTrue"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="24/30"/>
+                    tools:text="24"/>
+                <TextView
+                    android:id="@+id/sizeListData1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    tools:text="30"/>
             </LinearLayout>
 
             <LinearLayout
@@ -146,10 +162,17 @@
                     android:layout_gravity="center_horizontal"
                     />
                 <TextView
+                    android:id="@+id/tvWrong"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="6/30"/>
+                    tools:text="6"/>
+                <TextView
+                    android:id="@+id/sizeListData2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    tools:text="30"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -168,14 +191,16 @@
                     android:drawablePadding="@dimen/_10dp"
                     android:layout_height="match_parent"/>
                 <TextView
+                    android:id="@+id/tvPoint"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:textStyle="bold"
                     android:textSize="@dimen/text_size_16"
+                    android:maxLength="3"
                     android:textColor="@color/colorRed"
                     android:layout_marginStart="@dimen/_12dp"
-                    android:text="8.6"/>
+                    tools:text="8.6"/>
             </LinearLayout>
 
 

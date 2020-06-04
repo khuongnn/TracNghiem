@@ -85,11 +85,11 @@
             android:layout_marginStart="@dimen/_20dp"
             android:layout_marginTop="120dp"
             android:layout_marginEnd="@dimen/_20dp"
-            android:background="@drawable/bg_button_boder"
+            android:background="@drawable/custom_buttom_border"
             android:gravity="center"
             android:text="login"
             android:textAllCaps="true"
-            android:textColor="@color/textColorDark"
+            android:textColor="@color/colorWhile"
             android:textSize="@dimen/text_size_14"
             android:textStyle="bold" />
 
@@ -101,11 +101,11 @@
             android:layout_marginStart="@dimen/_20dp"
             android:layout_marginTop="@dimen/_12dp"
             android:layout_marginEnd="@dimen/_20dp"
-            android:background="@drawable/bg_button_boder"
+            android:background="@drawable/custom_buttom_border2"
             android:gravity="center"
             android:text="SIGN UP"
             android:textAllCaps="true"
-            android:textColor="@color/textColorDark"
+            android:textColor="@color/colorWhile"
             android:textSize="@dimen/text_size_14"
             android:textStyle="bold" />
 

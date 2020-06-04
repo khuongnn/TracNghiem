@@ -48,7 +48,10 @@ class PracticeQuizFragment() : BaseFragment<FragmentSlidePageBinding>() {
         mListQuestion[mPagePosition].choseId = checkedId
          mListQuestion[mPagePosition].setChoiceAns = getChoiceFromId(checkedId)
 
-        Toast.makeText(getApplicationContext(), "" +  mListQuestion[mPagePosition].setChoiceAns , Toast.LENGTH_SHORT).show()
+        // Toast.makeText(getApplicationContext(), "" +  mListQuestion[mPagePosition].setChoiceAns , Toast.LENGTH_SHORT).show()
+        if (mListQuestion[mPagePosition].setChoiceAns.equals(mListQuestion[mPagePosition].correct_answer,true) ){
+            checkPoint += 1
+        }
     }
 
     fun getChoiceFromId(ID: Int): String {
@@ -62,6 +65,9 @@ class PracticeQuizFragment() : BaseFragment<FragmentSlidePageBinding>() {
             return "D"
         } else
             return ""
+    }
+    companion object{
+        var checkPoint : Int = 0
     }
 
 
