@@ -22,6 +22,7 @@
         <activity android:name=".activity.main.mainpractice.mainpoint.CheckPointActivity" />
         <activity android:name=".activity.login.signup.SignUpActivity" />
         <activity android:name=".activity.main.sharewith.ShareWithActivity" />
+        <activity android:name=".activity.main.mainpractice.practicenavigate.PracticeNavigateActivity" />
 
 
         <activity android:name=".activity.pay.AddPaymentActivity" />

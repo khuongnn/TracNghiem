@@ -1,0 +1,141 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.tracnghiem.activity.main.mainpractice.practicenavigate.PracticeNavigateViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/llContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgAlarmOn"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_4dp"
+                android:padding="6dp"
+                android:src="@drawable/ic_alarm_on"
+                android:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/imgAlarmOff"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_4dp"
+                android:padding="6dp"
+                android:src="@drawable/ic_alarm_off"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tvTimeOut"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_4dp"
+                android:layout_marginTop="@dimen/_16dp"
+                android:lineSpacingMultiplier="1.2"
+                android:maxLines="1"
+                android:text="Time Out!"
+                android:visibility="gone"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/colorWhile"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/tvCountDown1"
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_4dp"
+                android:layout_marginTop="@dimen/_16dp"
+                android:gravity="right"
+                android:lineSpacingMultiplier="1.2"
+                android:maxLines="1"
+                android:text="00"
+                android:visibility="visible"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/colorWhile"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/tvView"
+                android:layout_width="5dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_4dp"
+                android:layout_marginTop="@dimen/_16dp"
+                android:lineSpacingMultiplier="1.2"
+                android:maxLines="1"
+                android:text=":"
+                android:visibility="visible"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/colorWhile"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/tvCountDown2"
+                android:layout_width="70dp"
+                android:visibility="visible"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_4dp"
+                android:layout_marginTop="@dimen/_16dp"
+                android:lineSpacingMultiplier="1.2"
+                android:maxLines="1"
+                android:text="00"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/colorWhile"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/tvGone"
+                style="?android:textAppearanceMedium"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="end"
+                android:lineSpacingMultiplier="1.2"
+                android:maxLines="1"
+                android:padding="16dp"
+                android:text=""
+                android:textColor="@color/colorWhile"
+                android:textSize="@dimen/text_size_20"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:drawableStart="@drawable/ic_bool_small"
+                android:drawablePadding="@dimen/_12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:lineSpacingMultiplier="1.2"
+                android:maxLines="1"
+                android:padding="16dp"
+                android:text="@string/detail"
+                android:textColor="@color/colorWhile"
+                android:textSize="@dimen/text_size_20"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/llContainer" />
+
+
+        <include layout="@layout/layout_empty" />
+    </RelativeLayout>
+</layout>
+
+

@@ -70,7 +70,7 @@
                 android:layout_marginStart="@dimen/_40dp"
                 android:layout_height="50dp">
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="100dp"
                     android:text="Đã làm"
                     android:drawableLeft="@drawable/ic_done"
                     android:gravity="center"
@@ -83,14 +83,13 @@
                     android:layout_height="match_parent"
                     android:paddingStart="@dimen/_12dp"
                     android:paddingEnd="@dimen/_12dp"
-                    app:layout_widthPercent="80%"
                     android:layout_gravity="center_horizontal"
                     />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="24/30"/>
+                    android:text="30/30"/>
             </LinearLayout>
 
             <LinearLayout
@@ -101,7 +100,7 @@
                 android:layout_below="@id/llTotal"
                 android:layout_height="50dp">
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="100dp"
                     android:text="Đúng"
                     android:drawableLeft="@drawable/ic_check_true"
                     android:gravity="center"
@@ -112,7 +111,6 @@
                     android:layout_width="@dimen/_200dp"
                     android:backgroundTint="@color/colorRed"
                     android:layout_height="match_parent"
-                    app:layout_widthPercent="80%"
                     android:paddingStart="@dimen/_12dp"
                     android:paddingEnd="@dimen/_12dp"
                     android:layout_gravity="center_horizontal"
@@ -125,13 +123,14 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/llUnCorrectAnswer"
                 android:layout_width="match_parent"
                 android:orientation="horizontal"
                 android:layout_below="@+id/llTrueAnswer"
                 android:layout_marginStart="@dimen/_40dp"
                 android:layout_height="50dp">
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="100dp"
                     android:text="Sai"
                     android:drawableLeft="@drawable/ic_cancel_red"
                     android:gravity="center"
@@ -142,7 +141,6 @@
                     android:layout_width="@dimen/_200dp"
                     android:backgroundTint="@color/colorRed"
                     android:layout_height="match_parent"
-                    app:layout_widthPercent="80%"
                     android:paddingStart="@dimen/_12dp"
                     android:paddingEnd="@dimen/_12dp"
                     android:layout_gravity="center_horizontal"
@@ -151,7 +149,33 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="24/30"/>
+                    android:text="6/30"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_below="@+id/llUnCorrectAnswer"
+                android:layout_marginStart="@dimen/_40dp"
+                android:layout_height="50dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="Kết quả"
+                    android:drawableLeft="@drawable/ic_bool_small"
+                    android:gravity="center"
+                    android:textColor="@color/textColorDark"
+                    android:textSize="@dimen/text_size_16"
+                    android:drawablePadding="@dimen/_10dp"
+                    android:layout_height="match_parent"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_size_16"
+                    android:textColor="@color/colorRed"
+                    android:layout_marginStart="@dimen/_12dp"
+                    android:text="8.6"/>
             </LinearLayout>
 
 

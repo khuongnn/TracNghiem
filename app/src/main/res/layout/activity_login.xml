@@ -23,7 +23,6 @@
                 android:layout_height="@dimen/input_text_height_login"
                 android:background="@drawable/edt_border"
                 android:hint="Email"
-                android:gravity="center"
                 android:inputType="textEmailAddress"
                 android:paddingStart="@dimen/_20dp"
                 android:paddingEnd="@dimen/_20dp"
@@ -46,9 +45,8 @@
                     android:background="@drawable/edt_border"
                     android:hint="Password"
                     android:inputType="textPassword"
+                    android:paddingStart="@dimen/_20dp"
                     android:maxLength="30"
-                    android:paddingStart="@dimen/_60dp"
-                    android:gravity="center"
                     android:textColorHint="@color/tabDividerUnselected"
                     android:textSize="@dimen/text_size_18" />
             </com.google.android.material.textfield.TextInputLayout>

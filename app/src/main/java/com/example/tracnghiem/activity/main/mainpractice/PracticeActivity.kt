@@ -32,6 +32,7 @@ class PracticeActivity : BaseActivity<ActivityPracticeBinding>() {
     private lateinit var bundle: Bundle
     private var mListQuestion = ArrayList<Questions>()
     private val loadingDialog = CustomProgressDialog()
+    private val mPageAdapter = SliderPageAdapter(supportFragmentManager)
 
     override fun setLayoutId(): Int = R.layout.activity_practice
 
@@ -54,7 +55,9 @@ class PracticeActivity : BaseActivity<ActivityPracticeBinding>() {
             if (it == "PGDpJ5OFShWI89lvWB1U") {
                 mViewModel.requestListQuestion()
                 // Setting time and ?? position
-            } else {
+            } else if(it == "SdbUiOoJCqJfdTpaUgbe"){
+               mViewModel.requestListQuestion2()
+            }else{
                 tvEmpty.showView()
             }
         }
@@ -64,24 +67,21 @@ class PracticeActivity : BaseActivity<ActivityPracticeBinding>() {
     var data = ArrayList<Questions>()
     override fun initListener() {
         mViewModel.getListQuestionLiveData().observe(this, Observer { result ->
-
             result?.let {
                 try {
                     for (i in 0..it.size) {
-                        if (it[i].idQuestion.equals("test1")) {
-                            data.add(it[i])
-                        }
+                     //   if (it[i].idQuestion.equals("test1"))
+                        data.add(it[i])
                     }
                 } catch (ex: Exception) {
-
+                    ex.printStackTrace()
                 }
 
 
                 mListQuestion = data
-                //  mListQuestion = result
                 itemList = mListQuestion
                 viewpager.offscreenPageLimit = 3
-                val mPageAdapter = SliderPageAdapter(supportFragmentManager)
+
                 for (i in 0..mListQuestion.size) {
                     bundle = Bundle()
                     bundle.putSerializable("DATA", mListQuestion)
@@ -93,7 +93,6 @@ class PracticeActivity : BaseActivity<ActivityPracticeBinding>() {
 
                 mPageAdapter.notifyDataSetChanged()
                 viewpager.adapter = mPageAdapter
-
 
             }
         })
@@ -127,7 +126,6 @@ class PracticeActivity : BaseActivity<ActivityPracticeBinding>() {
 
     private fun checkAnswer() {
 
-
         showDialog("name")
     }
 
@@ -149,16 +147,12 @@ class PracticeActivity : BaseActivity<ActivityPracticeBinding>() {
         val yesBtn = dialog.findViewById(R.id.btnFinish) as TextView
         val noBtn = dialog.findViewById(R.id.tvTitle) as TextView
         yesBtn.setOnClickListener {
-
-            Handler().postDelayed({
-                loadingDialog.show(this, "Please Wait")
-                intent = Intent(this, CheckPointActivity::class.java)
-
-                loadingDialog.dialog.dismiss()
-                startActivity(intent)
-                dialog.dismiss()
-            }, 4000)
-
+            loadingDialog.show(this, "Please Wait")
+            intent = Intent(this, CheckPointActivity::class.java)
+            loadingDialog.dialog.dismiss()
+            startActivity(intent)
+            dialog.dismiss()
+            finish()
         }
         noBtn.setOnClickListener {
             dialog.dismiss()

@@ -32,7 +32,10 @@ class QuestionLiveData : KoinComponent {
                     try {
                         val questions = document.toObject(Questions::class.java)
                         questions.id = document.id
-                        listQuestions.add(questions)
+                        if (questions.idQuestion?.equals("test1")!!){
+                            listQuestions.add(questions)
+                        }
+
                     } catch (e: Exception) {
                         e.printStackTrace()
                     }
@@ -43,6 +46,40 @@ class QuestionLiveData : KoinComponent {
                 mListQuestions.value = null
                 Timber.tag(tag).d(it.localizedMessage)
             }
+    }
+
+    fun fetchList2(){
+        if (!networkManager.isNetworkConnected()) {
+            mListQuestions.value = null
+            return
+        }
+
+        FirebaseFirestore.getInstance()
+            .collection("questions")
+            .orderBy("position", Query.Direction.ASCENDING)
+            .get()
+            .addOnSuccessListener { result ->
+                val listQuestions = ArrayList<Questions>()
+
+                for (document in result) {
+                    try {
+                        val questions = document.toObject(Questions::class.java)
+                        questions.id = document.id
+                        if (questions.idQuestion?.equals("exceltest1")!!){
+                            listQuestions.add(questions)
+                        }
+
+                    } catch (e: Exception) {
+                        e.printStackTrace()
+                    }
+                }
+                mListQuestions.value = listQuestions
+
+            }.addOnFailureListener {
+                mListQuestions.value = null
+                Timber.tag(tag).d(it.localizedMessage)
+            }
+
     }
 
 }

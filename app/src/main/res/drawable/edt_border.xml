@@ -2,11 +2,11 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="MissingDefaultResource">
-    <solid android:color="#6D76ACC6"/>
+    <solid android:color="background_login"/>
 
     <stroke
         android:width="2dp"
-        android:color="#8EDDA2A0"/>
+        android:color="#D6000000"/>
 
 </shape>
 

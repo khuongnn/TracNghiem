@@ -5,6 +5,8 @@ import com.example.tracnghiem.activity.main.course.CourseViewModel
 import com.example.tracnghiem.activity.main.course.chapter.CourseChapterViewModel
 import com.example.tracnghiem.activity.main.course.lesson.CourseLessonViewModel
 import com.example.tracnghiem.activity.main.mainpractice.TrainViewModel
+import com.example.tracnghiem.activity.main.mainpractice.mainpoint.CheckPointViewModel
+import com.example.tracnghiem.activity.main.mainpractice.practicenavigate.PracticeNavigateViewModel
 import com.example.tracnghiem.activity.main.practice.PracticeViewModel
 import com.example.tracnghiem.network.NetworkManager
 import com.example.tracnghiem.network.TNApiService
@@ -45,6 +47,8 @@ val dataModule = module {
     viewModel { PracticeViewModel() }
     viewModel { CourseChapterViewModel() }
     viewModel { CourseLessonViewModel() }
+    viewModel { PracticeNavigateViewModel() }
+    viewModel{ CheckPointViewModel() }
 }
 
 
